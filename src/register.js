@@ -5,14 +5,6 @@ const { TOKEN, CLIENT_ID, GUILD_ID } = process.env;
 
 const commands = [
   new SlashCommandBuilder().setName('panel').setDescription('Open the owner control panel'),
-  new SlashCommandBuilder()
-    .setName('cmd')
-    .setDescription('Run a saved custom command')
-    .addSubcommand(sc =>
-      sc.setName('run')
-        .setDescription('Run a custom command')
-        .addStringOption(o => o.setName('name').setDescription('Command name').setRequired(true).setAutocomplete(true))
-    )
 ];
 
 const rest = new REST({ version: '10' }).setToken(TOKEN);
